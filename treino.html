@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Treino do Dia · Matemática</title>
+<meta name="description" content="5 questões de Matemática por dia, do 6º ano ao Ensino Médio, com correção explicada e revisão dos seus erros. Grátis, sem cadastro.">
+<meta name="theme-color" content="#0F2547">
+<meta property="og:title" content="Treino do Dia · Matemática">
+<meta property="og:description" content="5 questões por dia, correção explicada e revisão dos seus erros. Grátis, sem cadastro.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* Direção: caderno quadriculado (mesma família visual do Gerador de Provas e do Caderno do Dia). */
+:root {
+  --bg: #F3F6FC; --surface: #FFFFFF; --ink: #0F2547; --muted: #4E5F7C; --line: #C9D5E8; --grid: #DDE6F4;
+  --brand: #1D4ED8; --on-brand: #FFFFFF; --hl: #FFD23F; --eqbg: #F1F5FD;
+  --ok: #166534; --ok-bg: #E7F6EC; --ok-line: #2E9E57;
+  --bad: #9F1239; --bad-bg: #FDECEF; --bad-line: #E0566F;
+  --display: 'Bricolage Grotesque', 'Trebuchet MS', system-ui, sans-serif;
+  --body: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1222; --surface: #121C33; --ink: #E7EEFB; --muted: #9AABC8; --line: #2A3A5C; --grid: #15213B;
+    --brand: #6B93FF; --on-brand: #081029; --eqbg: #1A2848;
+    --ok: #86E0A5; --ok-bg: #0F2A1B; --ok-line: #2E9E57;
+    --bad: #FFA3B5; --bad-bg: #331320; --bad-line: #E0566F; color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; min-height: 100vh; background-color: var(--bg); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.5;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.app { max-width: 640px; margin: 0 auto; padding: 18px 16px 40px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.12; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+[hidden] { display: none !important; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.marca { font-weight: 700; font-size: .9rem; letter-spacing: .02em; color: var(--muted); margin: 0 0 6px; }
+.marca b { background: linear-gradient(transparent 55%, var(--hl) 55%); color: var(--ink); padding: 0 .15em; }
+h1 { font-size: clamp(1.9rem, 7vw, 2.5rem); font-weight: 800; }
+.lead { color: var(--muted); margin: 8px 0 0; }
+
+.card { background: var(--surface); border: 1.5px solid var(--line); border-radius: 16px; padding: 18px; margin-top: 16px; }
+.rot { font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); display: block; margin: 0 0 8px; padding: 0; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+
+/* série */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip span { display: inline-flex; align-items: center; min-height: 44px; padding: 6px 16px; border: 1.5px solid var(--line); border-radius: 999px; cursor: pointer; font-weight: 700; background: var(--surface); }
+.chip input:checked + span { background: var(--hl); border-color: var(--hl); color: #0F2547; }
+.chip input:focus-visible + span { outline: 3px solid var(--brand); outline-offset: 2px; }
+
+/* botões */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 10px 20px; border-radius: 12px; border: 1.5px solid var(--ink); background: var(--surface); font-weight: 700; cursor: pointer; text-decoration: none; color: var(--ink); width: 100%; }
+.btn:hover { background: var(--grid); }
+.btn.primario { background: var(--brand); border-color: var(--brand); color: var(--on-brand); font-size: 1.08rem; min-height: 54px; }
+.btn.primario:hover { filter: brightness(1.08); background: var(--brand); }
+.btn.destaque { background: var(--hl); border-color: var(--hl); color: #0F2547; }
+.btn.destaque:hover { background: var(--hl); filter: brightness(.96); }
+.btn.leve { border-color: var(--line); font-weight: 600; min-height: 46px; }
+.pilha { display: grid; gap: 10px; margin-top: 14px; }
+
+/* home: sequência */
+.seq { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.seq .n { font-family: var(--display); font-weight: 800; font-size: 2rem; line-height: 1; }
+.seq .t { color: var(--muted); font-weight: 600; }
+.dias { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 12px; text-align: center; }
+.dias .d { font-size: .72rem; font-weight: 700; color: var(--muted); }
+.dias .b { width: 100%; aspect-ratio: 1; max-width: 40px; margin: 4px auto 0; border-radius: 50%; border: 1.5px solid var(--line); display: grid; place-items: center; font-size: .8rem; font-weight: 700; font-family: var(--mono); background: var(--surface); }
+.dias .b.feito { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
+.dias .b.hoje { outline: 2.5px solid var(--hl); outline-offset: 2px; }
+
+/* quiz */
+.topo { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.sair { background: none; border: 0; color: var(--muted); font-weight: 700; cursor: pointer; padding: 8px 4px; min-height: 44px; }
+.prog { display: flex; gap: 6px; margin: 4px 0 0; }
+.prog i { flex: 1; height: 8px; border-radius: 4px; background: var(--line); }
+.prog i.on { background: var(--brand); }
+.prog i.ok { background: var(--ok-line); }
+.prog i.no { background: var(--bad-line); }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 14px 0 0; }
+.tag { font-family: var(--mono); font-weight: 700; font-size: .78rem; background: var(--hl); color: #0F2547; padding: 2px 10px; border-radius: 6px; }
+.tag.rev { background: var(--brand); color: var(--on-brand); }
+.enun { font-size: 1.22rem; margin: 10px 0 0; line-height: 1.55; }
+.opcoes { display: grid; gap: 10px; margin: 18px 0 0; padding: 0; list-style: none; }
+.op { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; min-height: 58px; padding: 10px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--surface); cursor: pointer; font-size: 1.12rem; }
+.op:hover:not(:disabled) { border-color: var(--brand); }
+.op .l { flex: none; width: 32px; height: 32px; border-radius: 8px; background: var(--grid); display: grid; place-items: center; font-family: var(--mono); font-weight: 700; font-size: .95rem; }
+.op .tx { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.op .ic { flex: none; font-weight: 800; font-size: 1.1rem; }
+.op:disabled { cursor: default; color: inherit; }
+.op.certa { border-color: var(--ok-line); background: var(--ok-bg); }
+.op.certa .l { background: var(--ok-line); color: #fff; }
+.op.certa .ic { color: var(--ok); }
+.op.errada { border-color: var(--bad-line); background: var(--bad-bg); }
+.op.errada .l { background: var(--bad-line); color: #fff; }
+.op.errada .ic { color: var(--bad); }
+.op.apagada { opacity: .55; }
+.fb { margin-top: 16px; border-radius: 12px; padding: 14px 16px; border: 1.5px solid var(--line); background: var(--surface); }
+.fb.ok { border-color: var(--ok-line); background: var(--ok-bg); }
+.fb.no { border-color: var(--bad-line); background: var(--bad-bg); }
+.fb h3 { font-size: 1.15rem; }
+.fb.ok h3 { color: var(--ok); } .fb.no h3 { color: var(--bad); }
+.fb p { margin: 6px 0 0; }
+.res { margin-top: 12px; }
+.res .rot { margin-bottom: 4px; }
+.res ol { margin: 0; padding-left: 1.3em; }
+.res li { margin: 4px 0; }
+details.res summary { cursor: pointer; font-weight: 700; color: var(--muted); min-height: 36px; display: flex; align-items: center; }
+
+/* matemática */
+.eq { font-family: var(--mono); font-weight: 700; font-size: 1.05em; white-space: nowrap; background: var(--eqbg); padding: 1px 8px; border-radius: 6px; margin: 0 2px; }
+.frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 .2em; line-height: 1.15; font-size: .95em; }
+.frac .n { border-bottom: 1.6px solid currentColor; padding: 0 .3em; }
+.frac .d { padding: 0 .3em; }
+sup, sub { line-height: 0; font-size: .72em; }
+
+/* resultado */
+.placar { text-align: center; padding: 8px 0 4px; }
+.placar .g { font-family: var(--display); font-weight: 800; font-size: clamp(3.6rem, 18vw, 5.2rem); line-height: 1; }
+.placar .g small { font-size: .45em; color: var(--muted); font-weight: 600; }
+.placar p { margin: 8px 0 0; }
+.bolinhas { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+.bolinhas i { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-weight: 800; font-size: .9rem; color: #fff; }
+.bolinhas i.ok { background: var(--ok-line); } .bolinhas i.no { background: var(--bad-line); }
+.vol { margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: var(--eqbg); font-size: .98rem; }
+
+.rodape { margin-top: 28px; color: var(--muted); font-size: .88rem; }
+.rodape p { margin: 6px 0; }
+.rodape a { color: var(--brand); font-weight: 700; }
+.priv { display: flex; gap: 10px; align-items: flex-start; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .op, .btn { transition: background-color .12s, border-color .12s, transform .08s; }
+  .btn:active, .op:active:not(:disabled) { transform: scale(.985); }
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ============ HOME ============ -->
+  <main id="home">
+    <p class="marca">Prof. Marcelo · <b>Mathematicando</b></p>
+    <h1>Treino do Dia</h1>
+    <p class="lead">5 questões de Matemática por dia, com correção explicada. O que você erra volta nos próximos dias, até fixar.</p>
+
+    <div class="card">
+      <fieldset>
+        <legend class="rot">Sua série</legend>
+        <div class="chips" id="series" role="radiogroup"></div>
+      </fieldset>
+    </div>
+
+    <div class="card">
+      <div class="seq">
+        <div><span class="n" id="seqN">0</span> <span class="t" id="seqT">dias seguidos</span></div>
+        <span class="t" id="hojeT"></span>
+      </div>
+      <div class="dias" id="dias" aria-hidden="true"></div>
+      <div class="pilha">
+        <button class="btn primario" id="btnIniciar" type="button">Começar o treino de hoje</button>
+        <button class="btn destaque" id="btnVer" type="button" hidden>Ver resultado e compartilhar</button>
+        <button class="btn leve" id="btnMais" type="button" hidden>Treinar mais 5 questões</button>
+        <button class="btn leve" id="btnErros" type="button" hidden>Revisar meus erros</button>
+      </div>
+    </div>
+
+    <div class="rodape">
+      <p class="priv"><span aria-hidden="true">🔒</span><span><b>Sem cadastro.</b> Não pedimos nome, e-mail nem senha. Seu progresso fica salvo só neste aparelho.</span></p>
+      <p>Todos da mesma série recebem as mesmas 5 questões no dia. Combine com a turma e comparem como resolveram.</p>
+      <p>É professor(a)? <a href="https://profmathemamarcelo-alt.github.io/gerador-provas/" rel="noopener">Gere provas com versões diferentes</a> e organize turmas no <a href="https://cadernododia.com.br" rel="noopener">Caderno do Dia</a>.</p>
+    </div>
+  </main>
+
+  <!-- ============ QUIZ ============ -->
+  <section id="quiz" hidden aria-label="Questão">
+    <div class="topo">
+      <button class="sair" id="btnSair" type="button">← Sair</button>
+      <span class="rot" style="margin:0" id="qCont"></span>
+    </div>
+    <div class="prog" id="prog" aria-hidden="true"></div>
+    <div class="card">
+      <div class="meta"><span class="tag" id="qTag"></span><span class="tag rev" id="qRev" hidden>Revisão</span></div>
+      <p class="enun" id="qEnun"></p>
+      <ul class="opcoes" id="qOps"></ul>
+      <div id="qFb" aria-live="polite"></div>
+      <div class="pilha"><button class="btn primario" id="btnProx" type="button" hidden>Próxima</button></div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTADO ============ -->
+  <section id="result" hidden aria-label="Resultado">
+    <div class="card">
+      <div class="placar">
+        <span class="rot" id="rTit">Treino de hoje</span>
+        <div class="g"><span id="rNota">0</span><small>/<span id="rTot">5</span></small></div>
+        <div class="bolinhas" id="rBol" aria-hidden="true"></div>
+        <p id="rMsg"></p>
+      </div>
+      <div class="vol" id="rVol" hidden></div>
+      <div class="pilha">
+        <button class="btn destaque" id="btnShare" type="button" hidden>Compartilhar meu resultado</button>
+        <button class="btn leve" id="btnRMais" type="button">Treinar mais 5 questões</button>
+        <button class="btn leve" id="btnRHome" type="button">Voltar ao início</button>
+      </div>
+      <p class="rodape" id="shareMsg" role="status"></p>
+    </div>
+  </section>
+
+  <p class="sr" id="live" aria-live="polite"></p>
+</div>
+
+<script>
+/* engine.js - motor do "Treino do Dia" (sem DOM, testável em Node).
+   Cada gerador devolve: { q, ok, wrong:[[html, porquê]...], steps:[html...], v, meta }
+   - ok / wrong são as alternativas; "porquê" explica o erro conceitual provável de quem a escolher.
+   - build() sorteia 3 distratores distintos e embaralha. Tudo é determinístico a partir da semente. */
+(function (root) {
+  'use strict';
+  const MINUS = '−';
+  const NBSP = ' ';
+
+  /* ---------------------------------------------------------------- aleatoriedade determinística */
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function mix() {
+    let h = 2166136261 >>> 0;
+    for (let i = 0; i < arguments.length; i++) {
+      h ^= (arguments[i] | 0) + 0x9e3779b9;
+      h = Math.imul(h, 16777619);
+      h ^= h >>> 13;
+      h = Math.imul(h, 0x85ebca6b);
+      h ^= h >>> 16;
+    }
+    return h >>> 0;
+  }
+  function hashStr(s) { let h = 5381; for (let i = 0; i < s.length; i++) h = (Math.imul(h, 33) ^ s.charCodeAt(i)) >>> 0; return h; }
+  function makeRng(seed) {
+    const f = mulberry32(seed);
+    return {
+      int: (a, b) => a + Math.floor(f() * (b - a + 1)),
+      pick: (arr) => arr[Math.floor(f() * arr.length)],
+      shuffle: (arr) => {
+        const x = arr.slice();
+        for (let i = x.length - 1; i > 0; i--) { const j = Math.floor(f() * (i + 1)); const t = x[i]; x[i] = x[j]; x[j] = t; }
+        return x;
+      },
+    };
+  }
+
+  /* ---------------------------------------------------------------- formatação */
+  function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { const t = a % b; a = b; b = t; } return a || 1; }
+  function lcm(a, b) { return a / gcd(a, b) * b; }
+  function group(i) { return i.replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+  function sgn(n) { return n < 0 ? MINUS + group(String(-n)) : group(String(n)); }
+  /* n inteiro escalado por 10^p -> texto com vírgula, sem zeros à direita */
+  function dec(n, p) {
+    const neg = n < 0; n = Math.abs(n); let s = String(n);
+    while (s.length <= p) s = '0' + s;
+    const i = s.slice(0, s.length - p); const f = s.slice(s.length - p).replace(/0+$/, '');
+    return (neg ? MINUS : '') + group(i) + (f ? ',' + f : '');
+  }
+  function brl(x) { return 'R$' + NBSP + sgn(x); }
+  function F(n, d) { return '<span class="frac"><span class="n">' + n + '</span><span class="d">' + d + '</span></span>'; }
+  function Fs(n, d) { const g = gcd(n, d); n /= g; d /= g; return d === 1 ? String(n) : F(n, d); }
+  function eq(s) { return '<span class="eq">' + s + '</span>'; }
+  function sup(n) { return '<sup>' + n + '</sup>'; }
+  function term(c, v) { // " + 3x", " − x"
+    const a = Math.abs(c); const body = (a === 1 && v ? '' : a) + v;
+    return (c < 0 ? ' ' + MINUS + ' ' : ' + ') + body;
+  }
+  function plain(h) { return String(h).replace(/<\/span><span class="d">/g, '/').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(); }
+  function fact(n) { let x = 1; for (let i = 2; i <= n; i++) x *= i; return x; }
+  function sortedRoots(a, b) { const s = [a, b].sort((x, y) => x - y); return 'x = ' + sgn(s[0]) + ' ou x = ' + sgn(s[1]); }
+
+  /* ---------------------------------------------------------------- geradores */
+  const TOPICS = [];
+  function T(id, level, nome, f) { TOPICS.push({ id: id, level: level, nome: nome, f: f }); }
+
+  /* ======================= 6º ANO ======================= */
+  T('exp6', '6', 'Expressões numéricas', (r) => {
+    const a = r.int(2, 9), b = r.int(2, 9), c = r.int(2, 9);
+    if (r.int(0, 1) === 0) {
+      const d = r.int(1, 9), v = a + b * c - d;
+      return {
+        q: 'Quanto vale ' + eq(a + ' + ' + b + ' × ' + c + ' ' + MINUS + ' ' + d) + '?', ok: String(v), v: v, meta: { t: 0, a: a, b: b, c: c, d: d },
+        wrong: [[String((a + b) * c - d), 'Resolveu da esquerda para a direita, sem fazer a multiplicação primeiro.'],
+        [String(a + b * c + d), 'Trocou a subtração por adição no final.'],
+        [String(a + b * (c - d)), 'Agrupou a subtração com a multiplicação, mas não há parênteses.'],
+        [String(a + b + c - d), 'Somou em vez de multiplicar.']],
+        steps: ['A multiplicação vem antes: ' + b + ' × ' + c + ' = ' + (b * c) + '.', 'Agora, da esquerda para a direita: ' + a + ' + ' + (b * c) + ' = ' + (a + b * c) + ', e ' + (a + b * c) + ' ' + MINUS + ' ' + d + ' = <b>' + v + '</b>.'],
+      };
+    }
+    const d = r.int(1, 9), v = (a + b) * c - d;
+    return {
+      q: 'Quanto vale ' + eq('(' + a + ' + ' + b + ') × ' + c + ' ' + MINUS + ' ' + d) + '?', ok: String(v), v: v, meta: { t: 1, a: a, b: b, c: c, d: d },
+      wrong: [[String(a + b * c - d), 'Ignorou os parênteses e multiplicou só ' + b + ' por ' + c + '.'],
+      [String((a + b) * c + d), 'Trocou a subtração por adição no final.'],
+      [String(a + b + c - d), 'Somou em vez de multiplicar.'],
+      [String((a + b) * (c - d)), 'Estendeu o parêntese até a subtração.']],
+      steps: ['Primeiro o que está entre parênteses: ' + a + ' + ' + b + ' = ' + (a + b) + '.', 'Depois a multiplicação: ' + (a + b) + ' × ' + c + ' = ' + ((a + b) * c) + '.', 'Por fim a subtração: ' + ((a + b) * c) + ' ' + MINUS + ' ' + d + ' = <b>' + v + '</b>.'],
+    };
+  });
+
+  T('frac6', '6', 'Soma de frações', (r) => {
+    const dens = [2, 3, 4, 5, 6, 8, 10, 12];
+    const b = r.pick(dens); let d = r.pick(dens); while (d === b) d = r.pick(dens);
+    const a = r.int(1, b - 1), c = r.int(1, d - 1);
+    const L = lcm(b, d), n = a * (L / b) + c * (L / d);
+    return {
+      q: 'Calcule ' + eq(F(a, b) + ' + ' + F(c, d)) + ' e dê o resultado na forma mais simples.', ok: Fs(n, L), v: n / L, meta: { a: a, b: b, c: c, d: d },
+      wrong: [[Fs(a + c, b + d), 'Somou numeradores e denominadores. Só se somam os numeradores, e só quando os denominadores são iguais.'],
+      [Fs(a + c, b * d), 'Somou os numeradores sem igualar os denominadores.'],
+      [Fs(a * c, b * d), 'Multiplicou as frações em vez de somar.'],
+      [Fs(n, b + d), 'Acertou o numerador, mas somou os denominadores.']],
+      steps: ['O menor denominador comum de ' + b + ' e ' + d + ' é ' + L + '.',
+      F(a, b) + ' = ' + F(a * (L / b), L) + ' e ' + F(c, d) + ' = ' + F(c * (L / d), L) + '.',
+      'Somando os numeradores: ' + F(n, L) + (gcd(n, L) > 1 ? ' = <b>' + Fs(n, L) + '</b> (simplificando).' : '.')],
+    };
+  });
+
+  T('dec6', '6', 'Multiplicação de decimais', (r) => {
+    const ai = r.int(12, 99), bi = r.int(2, 9) * (r.int(0, 1) ? 1 : 1), p = ai * bi;
+    return {
+      q: 'Calcule ' + eq(dec(ai, 1) + ' × ' + dec(bi, 1)) + '.', ok: dec(p, 2), v: p / 100, meta: { ai: ai, bi: bi },
+      wrong: [[dec(p, 1), 'Contou só uma casa decimal. São duas, uma de cada fator.'],
+      [dec(p, 3), 'Contou casas decimais a mais.'],
+      [String(p), 'Esqueceu de colocar a vírgula.'],
+      [dec(p, 4), 'Contou casas decimais a mais.']],
+      steps: ['Ignore as vírgulas: ' + ai + ' × ' + bi + ' = ' + p + '.', 'Cada fator tem 1 casa decimal, então o resultado tem 2.', 'Logo: <b>' + dec(p, 2) + '</b>.'],
+    };
+  });
+
+  T('mmc6', '6', 'MMC em problemas', (r) => {
+    let a, b;
+    do { a = r.int(4, 15); b = r.int(4, 15); } while (a === b || gcd(a, b) === 1 || a % b === 0 || b % a === 0);
+    const L = lcm(a, b), g = gcd(a, b);
+    return {
+      q: 'Duas linhas de ônibus saem juntas do terminal às 6h. Uma sai a cada <b>' + a + ' minutos</b> e a outra a cada <b>' + b + ' minutos</b>. Depois de quantos minutos elas voltam a sair juntas?', ok: L + ' min', v: L, meta: { a: a, b: b },
+      wrong: [[a * b + ' min', 'Multiplicou os intervalos. Isso dá um instante em que saem juntas, mas não o primeiro.'],
+      [(a + b) + ' min', 'Somou os intervalos.'],
+      [g + ' min', 'Calculou o MDC em vez do MMC.'],
+      [(L * 2) + ' min', 'Pegou o segundo encontro, não o primeiro.']],
+      steps: ['Procuramos o menor múltiplo comum (MMC) de ' + a + ' e ' + b + '.', 'MDC(' + a + ', ' + b + ') = ' + g + ', e MMC = (' + a + ' × ' + b + ') ÷ ' + g + ' = <b>' + L + '</b>.'],
+    };
+  });
+
+  T('perc6', '6', 'Porcentagem básica', (r) => {
+    const X = r.pick([10, 20, 25, 50]), N = 40 * r.int(1, 12) + (r.int(0, 1) ? 0 : 0), v = N * X / 100;
+    return {
+      q: 'Calcule <b>' + X + '%</b> de <b>' + N + '</b>.', ok: String(v), v: v, meta: { X: X, N: N },
+      wrong: [[String(N - v), 'Calculou o que sobra (' + (100 - X) + '%), não o que foi pedido.'],
+      [String(X), 'Confundiu a porcentagem com o resultado.'],
+      [String(N * X), 'Multiplicou sem dividir por 100.'],
+      [String(N + v), 'Somou a parte ao total.']],
+      steps: [X + '% = ' + F(X, 100) + '.', F(X, 100) + ' de ' + N + ' = ' + N + ' × ' + X + ' ÷ 100 = <b>' + v + '</b>.'],
+    };
+  });
+
+  T('area6', '6', 'Área e perímetro', (r) => {
+    const L = r.int(3, 15), W = r.int(2, L - 1);
+    if (r.int(0, 1) === 0) {
+      return {
+        q: 'Um terreno retangular mede <b>' + L + ' m</b> por <b>' + W + ' m</b>. Qual é a sua <b>área</b>?', ok: L * W + ' m²', v: L * W, meta: { t: 0, L: L, W: W },
+        wrong: [[2 * (L + W) + ' m²', 'Calculou o perímetro (contorno), não a área.'],
+        [(L + W) + ' m²', 'Somou os lados.'],
+        [(2 * L * W) + ' m²', 'Dobrou o produto sem necessidade.'],
+        [(L * L) + ' m²', 'Tratou o terreno como se fosse um quadrado.']],
+        steps: ['Área do retângulo = comprimento × largura.', L + ' × ' + W + ' = <b>' + (L * W) + ' m²</b>.'],
+      };
+    }
+    return {
+      q: 'Para cercar um terreno retangular de <b>' + L + ' m</b> por <b>' + W + ' m</b>, quantos metros de cerca são necessários?', ok: 2 * (L + W) + ' m', v: 2 * (L + W), meta: { t: 1, L: L, W: W },
+      wrong: [[L * W + ' m', 'Calculou a área, não o contorno.'],
+      [(L + W) + ' m', 'Contou só dois lados.'],
+      [(2 * L * W) + ' m', 'Dobrou a área.'],
+      [(L + W + L) + ' m', 'Contou só três lados.']],
+      steps: ['A cerca contorna o terreno: é o perímetro.', 'Perímetro = 2 × (' + L + ' + ' + W + ') = <b>' + (2 * (L + W)) + ' m</b>.'],
+    };
+  });
+
+  /* ======================= 7º ANO ======================= */
+  T('int7', '7', 'Números inteiros', (r) => {
+    const t = r.int(0, 3), x = r.int(2, 15), y = r.int(2, 15);
+    if (t === 0) {
+      return { q: 'Calcule ' + eq(x + ' ' + MINUS + ' (' + MINUS + y + ')') + '.', ok: sgn(x + y), v: x + y, meta: { t: t, x: x, y: y },
+        wrong: [[sgn(x - y), 'Ignorou o sinal do segundo número. Subtrair um negativo equivale a somar.'], [sgn(-(x + y)), 'Errou o sinal do resultado.'], [sgn(y - x), 'Inverteu a ordem da subtração.'], [sgn(-x - y + 2 * x), 'Errou a conta de sinais.']],
+        steps: ['Subtrair um número negativo é o mesmo que somar o seu oposto.', x + ' ' + MINUS + ' (' + MINUS + y + ') = ' + x + ' + ' + y + ' = <b>' + (x + y) + '</b>.'] };
+    }
+    if (t === 1) {
+      return { q: 'Calcule ' + eq('(' + MINUS + x + ') ' + MINUS + ' ' + y) + '.', ok: sgn(-(x + y)), v: -(x + y), meta: { t: t, x: x, y: y },
+        wrong: [[sgn(x + y), 'Perdeu o sinal negativo. Estando abaixo de zero e descendo mais, o resultado fica mais negativo.'], [sgn(x - y), 'Trocou o sinal do primeiro número.'], [sgn(y - x), 'Inverteu a ordem.'], [sgn(-(x + y) + 2), 'Errou a conta.']],
+        steps: ['Começamos em ' + MINUS + x + ' e descemos mais ' + y + ' unidades.', MINUS + x + ' ' + MINUS + ' ' + y + ' = <b>' + MINUS + (x + y) + '</b>.'] };
+    }
+    if (t === 2) {
+      return { q: 'Calcule ' + eq('(' + MINUS + x + ') × (' + MINUS + y + ')') + '.', ok: sgn(x * y), v: x * y, meta: { t: t, x: x, y: y },
+        wrong: [[sgn(-x * y), 'Aplicou "menos com menos dá menos". Na multiplicação, sinais iguais dão resultado positivo.'], [sgn(x + y), 'Somou em vez de multiplicar.'], [sgn(-(x + y)), 'Somou e ainda trocou o sinal.'], [sgn(x * y + y), 'Errou a conta.']],
+        steps: ['Sinais iguais: o produto é positivo.', x + ' × ' + y + ' = <b>' + (x * y) + '</b>.'] };
+    }
+    const N = x * y;
+    return { q: 'Calcule ' + eq('(' + MINUS + N + ') ÷ (' + MINUS + y + ')') + '.', ok: sgn(x), v: x, meta: { t: t, x: x, y: y },
+      wrong: [[sgn(-x), 'Na divisão, sinais iguais dão resultado positivo.'], [sgn(N - y), 'Subtraiu em vez de dividir.'], [sgn(-(N - y)), 'Subtraiu em vez de dividir e errou o sinal.'], [sgn(y), 'Dividiu na ordem errada.']],
+      steps: ['Sinais iguais: o quociente é positivo.', N + ' ÷ ' + y + ' = <b>' + x + '</b>.'] };
+  });
+
+  T('eq7', '7', 'Equação do 1º grau', (r) => {
+    const x = r.int(1, 12), a = r.int(2, 9);
+    let b = 0; while (b === 0) b = r.int(-12, 12);
+    const c = a * x + b;
+    return {
+      q: 'Resolva ' + eq(a + 'x' + term(b, '') + ' = ' + sgn(c)) + '.', ok: 'x = ' + x, v: x, meta: { a: a, b: b, c: c },
+      wrong: [['x = ' + dec(Math.round((c + b) * 100 / a), 2), 'Passou o ' + sgn(b) + ' para o outro lado sem trocar o sinal.'],
+      ['x = ' + sgn(c - b), 'Passou o termo corretamente, mas esqueceu de dividir por ' + a + '.'],
+      ['x = ' + dec(Math.round(c * 100 / a) - b * 100, 2), 'Dividiu só o ' + sgn(c) + ' por ' + a + ', e não os dois lados por inteiro.'],
+      ['x = ' + (x + 1), 'Errou a conta final.']],
+      steps: [a + 'x' + term(b, '') + ' = ' + sgn(c) + '.', 'Passando ' + sgn(b) + ' para o outro lado com o sinal trocado: ' + a + 'x = ' + sgn(c) + (b > 0 ? ' ' + MINUS + ' ' : ' + ') + Math.abs(b) + ' = ' + (c - b) + '.', 'Dividindo por ' + a + ': <b>x = ' + x + '</b>.'],
+    };
+  });
+
+  T('prop7', '7', 'Regra de três', (r) => {
+    if (r.int(0, 1) === 0) {
+      const k = r.int(2, 8), u = r.int(3, 15), P = k * u; let m; do { m = r.int(2, 14); } while (m === k);
+      return {
+        q: k + ' cadernos custam <b>' + brl(P) + '</b>. Quanto custam <b>' + m + ' cadernos</b> iguais a esses?', ok: brl(u * m), v: u * m, meta: { t: 0, k: k, P: P, m: m },
+        wrong: [[brl(P + (m - k)), 'Raciocinou por soma. O preço cresce na mesma proporção (multiplicação), não pelo mesmo acréscimo.'],
+        [brl(Math.round(P * k / m)), 'Inverteu a proporção: mais cadernos custam mais, não menos.'],
+        [brl(P * m), 'Multiplicou o preço total pela quantidade nova.'],
+        [brl(u * m + u), 'Errou a conta, ficando com um caderno a mais.']],
+        steps: ['Mais cadernos, mais dinheiro: grandezas diretamente proporcionais.', 'Preço de um caderno: ' + P + ' ÷ ' + k + ' = ' + u + '.', 'Para ' + m + ' cadernos: ' + u + ' × ' + m + ' = <b>' + brl(u * m) + '</b>.'],
+      };
+    }
+    const k = r.pick([2, 3, 4, 6]), d = r.pick([6, 8, 10, 12, 15]), tot = k * d; let m;
+    const ds = []; for (let i = 2; i <= 24; i++) if (tot % i === 0 && i !== k) ds.push(i);
+    m = r.pick(ds); const nd = tot / m;
+    return {
+      q: k + ' pedreiros constroem um muro em <b>' + d + ' dias</b>. Com <b>' + m + ' pedreiros</b>, no mesmo ritmo, em quantos dias o muro fica pronto?', ok: nd + ' dias', v: nd, meta: { t: 1, k: k, d: d, m: m },
+      wrong: [[Math.round(d * m / k) + ' dias', 'Tratou como proporção direta. Mais pedreiros levam a menos dias (proporção inversa).'],
+      [Math.max(1, d + (k - m)) + ' dias', 'Raciocinou por soma e subtração em vez de proporção.'],
+      [(nd + 1) + ' dias', 'Errou a conta final.'],
+      [(d * k) + ' dias', 'Multiplicou os dias pelo número de pedreiros.']],
+      steps: ['Mais pedreiros, menos dias: grandezas inversamente proporcionais.', 'O trabalho total é constante: ' + k + ' × ' + d + ' = ' + tot + ' pedreiros·dia.', 'Com ' + m + ' pedreiros: ' + tot + ' ÷ ' + m + ' = <b>' + nd + ' dias</b>.'],
+    };
+  });
+
+  T('perc7', '7', 'Aumento e desconto', (r) => {
+    const P = 20 * r.int(3, 20), X = r.pick([10, 20, 25, 30, 50]);
+    if (r.int(0, 1) === 0) {
+      const v = P * (100 + X) / 100;
+      return {
+        q: 'Um produto de <b>' + brl(P) + '</b> teve aumento de <b>' + X + '%</b>. Qual é o novo preço?', ok: brl(v), v: v, meta: { t: 0, P: P, X: X },
+        wrong: [[brl(P * X / 100), 'Calculou só o valor do aumento, sem somar ao preço original.'], [brl(P + X), 'Somou ' + X + ' reais, em vez de ' + X + '% do preço.'], [brl(P * (100 - X) / 100), 'Aplicou desconto em vez de aumento.'], [brl(P * X), 'Multiplicou sem dividir por 100.']],
+        steps: ['Aumento: ' + X + '% de ' + P + ' = ' + (P * X / 100) + '.', 'Novo preço = ' + P + ' + ' + (P * X / 100) + ' = <b>' + brl(v) + '</b>.'],
+      };
+    }
+    const v = P * (100 - X) / 100;
+    return {
+      q: 'Uma blusa de <b>' + brl(P) + '</b> está com <b>' + X + '%</b> de desconto. Quanto se paga por ela?', ok: brl(v), v: v, meta: { t: 1, P: P, X: X },
+      wrong: [[brl(P * X / 100), 'Calculou só o valor do desconto, não o preço final.'], [brl(P - X), 'Subtraiu ' + X + ' reais, em vez de ' + X + '% do preço.'], [brl(P * (100 + X) / 100), 'Aplicou aumento em vez de desconto.'], [brl(P * X), 'Multiplicou sem dividir por 100.']],
+      steps: ['Desconto: ' + X + '% de ' + P + ' = ' + (P * X / 100) + '.', 'Preço final = ' + P + ' ' + MINUS + ' ' + (P * X / 100) + ' = <b>' + brl(v) + '</b>.'],
+    };
+  });
+
+  T('frac7', '7', 'Multiplicação e divisão de frações', (r) => {
+    const a = r.int(1, 5), b = r.int(a + 1, 9), c = r.int(1, 5), d = r.int(c + 1, 9);
+    if (r.int(0, 1) === 0) {
+      return {
+        q: 'Calcule ' + eq(F(a, b) + ' × ' + F(c, d)) + '.', ok: Fs(a * c, b * d), v: a * c / (b * d), meta: { t: 0, a: a, b: b, c: c, d: d },
+        wrong: [[Fs(a * d + c * b, b * d), 'Aplicou a regra da soma de frações.'], [Fs(a + c, b + d), 'Somou numeradores e denominadores.'], [Fs(a * d, b * c), 'Inverteu uma das frações, como se fosse divisão.'], [Fs(a * c, b + d), 'Multiplicou os numeradores, mas somou os denominadores.']],
+        steps: ['Na multiplicação, multiplica-se numerador por numerador e denominador por denominador.', F(a * c, b * d) + (gcd(a * c, b * d) > 1 ? ' = <b>' + Fs(a * c, b * d) + '</b> (simplificando).' : '.')],
+      };
+    }
+    return {
+      q: 'Calcule ' + eq(F(a, b) + ' ÷ ' + F(c, d)) + '.', ok: Fs(a * d, b * c), v: a * d / (b * c), meta: { t: 1, a: a, b: b, c: c, d: d },
+      wrong: [[Fs(a * c, b * d), 'Multiplicou direto, sem inverter a segunda fração.'], [Fs(b * c, a * d), 'Inverteu a primeira fração, e não a segunda.'], [Fs(a * d + c * b, b * d), 'Aplicou a regra da soma.'], [Fs(a * d, b + c), 'Errou o denominador.']],
+      steps: ['Dividir por uma fração é multiplicar pelo seu inverso.', F(a, b) + ' × ' + F(d, c) + ' = ' + F(a * d, b * c) + (gcd(a * d, b * c) > 1 ? ' = <b>' + Fs(a * d, b * c) + '</b>.' : '.')],
+    };
+  });
+
+  /* ======================= 8º ANO ======================= */
+  T('pot8', '8', 'Propriedades das potências', (r) => {
+    const base = r.pick([2, 3, 5]), m = r.int(3, 9), n = r.int(2, m - 1), t = r.int(0, 2);
+    const P = (b, e) => b + sup(e);
+    if (t === 0) {
+      return { q: 'Simplifique ' + eq(P(base, m) + ' × ' + P(base, n)) + '.', ok: P(base, m + n), v: m + n, meta: { t: t, base: base, m: m, n: n },
+        wrong: [[P(base, m * n), 'Multiplicou os expoentes. Com bases iguais na multiplicação, os expoentes se somam.'], [P(base * base, m + n), 'Multiplicou as bases. A base fica a mesma.'], [P(base, m - n), 'Subtraiu os expoentes, regra da divisão.'], [P(base * base, m * n), 'Multiplicou bases e expoentes.']],
+        steps: ['Mesma base na multiplicação: conserva-se a base e somam-se os expoentes.', P(base, m) + ' × ' + P(base, n) + ' = ' + P(base, m + '+' + n) + ' = <b>' + P(base, m + n) + '</b>.'] };
+    }
+    if (t === 1) {
+      return { q: 'Simplifique ' + eq('(' + P(base, m) + ')' + sup(n)) + '.', ok: P(base, m * n), v: m * n, meta: { t: t, base: base, m: m, n: n },
+        wrong: [[P(base, m + n), 'Somou os expoentes. Potência de potência multiplica os expoentes.'], [P(base * n, m), 'Multiplicou a base pelo expoente de fora.'], [P(base, n), 'Esqueceu um dos expoentes.'], [P(base, m), 'Esqueceu um dos expoentes.']],
+        steps: ['Potência de potência: conserva-se a base e multiplicam-se os expoentes.', '(' + P(base, m) + ')' + sup(n) + ' = ' + P(base, m + '×' + n) + ' = <b>' + P(base, m * n) + '</b>.'] };
+    }
+    return { q: 'Simplifique ' + eq(P(base, m) + ' ÷ ' + P(base, n)) + '.', ok: P(base, m - n), v: m - n, meta: { t: t, base: base, m: m, n: n },
+      wrong: [[P(base, m * n), 'Multiplicou os expoentes. Na divisão eles se subtraem.'], [P(base, m + n), 'Somou os expoentes, regra da multiplicação.'], ['1', 'Cortou as bases e concluiu que o resultado é 1.'], [P(1, m - n), 'Dividiu as bases e manteve o expoente.']],
+      steps: ['Mesma base na divisão: conserva-se a base e subtraem-se os expoentes.', P(base, m) + ' ÷ ' + P(base, n) + ' = ' + P(base, m + MINUS + n) + ' = <b>' + P(base, m - n) + '</b>.'] };
+  });
+
+  T('prod8', '8', 'Produtos notáveis', (r) => {
+    const a = r.int(2, 9), t = r.int(0, 2);
+    if (t === 0) {
+      return { q: 'Desenvolva ' + eq('(x + ' + a + ')²') + '.', ok: 'x²' + term(2 * a, 'x') + term(a * a, ''), v: a, meta: { t: t, a: a },
+        wrong: [['x²' + term(a * a, ''), 'Elevou ao quadrado cada termo e esqueceu o termo do meio (2 · x · ' + a + ').'], ['x²' + term(a, 'x') + term(a * a, ''), 'Usou ' + a + 'x no lugar de 2 · ' + a + 'x.'], ['x²' + term(2 * a, ''), 'Errou o termo independente: é ' + a + '² = ' + a * a + '.'], ['x²' + term(2 * a, 'x') + term(2 * a, ''), 'Usou 2a como termo independente em vez de a².']],
+        steps: ['(x + a)² = x² + 2ax + a².', 'Com a = ' + a + ': x² + 2 · ' + a + ' · x + ' + a + '² = <b>x²' + term(2 * a, 'x') + term(a * a, '') + '</b>.'] };
+    }
+    if (t === 1) {
+      return { q: 'Desenvolva ' + eq('(x ' + MINUS + ' ' + a + ')²') + '.', ok: 'x²' + term(-2 * a, 'x') + term(a * a, ''), v: a, meta: { t: t, a: a },
+        wrong: [['x²' + term(-(a * a), ''), 'Esqueceu o termo do meio e deixou o último negativo. Todo quadrado é positivo.'], ['x²' + term(-2 * a, 'x') + term(-(a * a), ''), 'Deixou o último termo negativo: ' + MINUS + a + ' ao quadrado é +' + a * a + '.'], ['x²' + term(2 * a, 'x') + term(a * a, ''), 'Errou o sinal do termo do meio.'], ['x²' + term(-a, 'x') + term(a * a, ''), 'Usou ' + MINUS + a + 'x no lugar de ' + MINUS + 2 * a + 'x.']],
+        steps: ['(x ' + MINUS + ' a)² = x² ' + MINUS + ' 2ax + a².', 'Com a = ' + a + ': <b>x²' + term(-2 * a, 'x') + term(a * a, '') + '</b>.'] };
+    }
+    return { q: 'Desenvolva ' + eq('(x ' + MINUS + ' ' + a + ')(x + ' + a + ')') + '.', ok: 'x²' + term(-(a * a), ''), v: a, meta: { t: t, a: a },
+      wrong: [['x²' + term(a * a, ''), 'Errou o sinal: o produto da soma pela diferença tem sinal negativo.'], ['x²' + term(-2 * a, 'x') + term(a * a, ''), 'Confundiu com o quadrado da diferença.'], ['x²' + term(2 * a, 'x') + term(a * a, ''), 'Confundiu com o quadrado da soma.'], ['x²' + term(-a, ''), 'Esqueceu de elevar ' + a + ' ao quadrado.']],
+      steps: ['(x ' + MINUS + ' a)(x + a) = x² ' + MINUS + ' a². Os termos do meio se cancelam.', 'Com a = ' + a + ': <b>x²' + term(-(a * a), '') + '</b>.'] };
+  });
+
+  T('stat8', '8', 'Média, mediana e moda', (r) => {
+    const t = r.int(0, 2);
+    if (t === 0) {
+      const arr = []; for (let i = 0; i < 4; i++) arr.push(r.int(2, 12));
+      const s = arr.reduce((p, c) => p + c, 0), cand = []; for (let x = 1; x <= 15; x++) if ((s + x) % 5 === 0) cand.push(x);
+      arr.push(r.pick(cand)); const sum = s + arr[4], mean = sum / 5, sorted = arr.slice().sort((p, c) => p - c);
+      return { q: 'As notas de um aluno foram <b>' + arr.join(', ') + '</b>. Qual é a <b>média</b>?', ok: String(mean), v: mean, meta: { t: t, arr: arr },
+        wrong: [[String(sorted[2]), 'Calculou a mediana (valor central), não a média.'], [String(sum), 'Somou os valores e esqueceu de dividir por 5.'], [dec(Math.round((sorted[0] + sorted[4]) * 5), 1), 'Usou só o maior e o menor valor.'], [String(mean + 1), 'Errou a conta da divisão.']],
+        steps: ['Média = soma dos valores ÷ quantidade de valores.', 'Soma: ' + arr.join(' + ') + ' = ' + sum + '.', sum + ' ÷ 5 = <b>' + mean + '</b>.'] };
+    }
+    if (t === 1) {
+      const n = r.pick([5, 7]); let arr, sorted, mid, mean;
+      do { arr = []; for (let i = 0; i < n; i++) arr.push(r.int(1, 20)); sorted = arr.slice().sort((p, c) => p - c); mid = sorted[(n - 1) / 2]; } while (arr[(n - 1) / 2] === mid);
+      mean = arr.reduce((p, c) => p + c, 0) / n;
+      return { q: 'Qual é a <b>mediana</b> do conjunto <b>' + arr.join(', ') + '</b>?', ok: String(mid), v: mid, meta: { t: t, arr: arr },
+        wrong: [[String(arr[(n - 1) / 2]), 'Pegou o valor do meio sem ordenar antes.'], [dec(Math.round(mean * 10), 1), 'Calculou a média, não a mediana.'], [String(sorted[n - 1] - sorted[0]), 'Calculou a amplitude (maior menos menor).'], [String(sorted[(n - 1) / 2 + 1]), 'Errou a posição central depois de ordenar.']],
+        steps: ['Primeiro ordene: ' + sorted.join(', ') + '.', 'Com ' + n + ' valores, a mediana é o ' + ((n + 1) / 2) + 'º: <b>' + mid + '</b>.'] };
+    }
+    let arr, v, others;
+    do { v = r.int(1, 9); others = []; while (others.length < 4) { const x = r.int(1, 9); if (x !== v && others.indexOf(x) < 0) others.push(x); } } while (false);
+    arr = r.shuffle(others.concat([v, v, v])); const sorted = arr.slice().sort((p, c) => p - c), sum = arr.reduce((p, c) => p + c, 0);
+    return { q: 'Qual é a <b>moda</b> do conjunto <b>' + arr.join(', ') + '</b>?', ok: String(v), v: v, meta: { t: t, arr: arr },
+      wrong: [[dec(Math.round(sum * 10 / 7), 1), 'Calculou a média, não a moda.'], [String(sorted[3]), 'Calculou a mediana.'], [String(sorted[6]), 'Pegou o maior valor.'], [String(others[0]), 'Pegou um valor que aparece só uma vez.']],
+      steps: ['A moda é o valor que mais se repete.', 'O ' + v + ' aparece 3 vezes, e os outros aparecem 1 vez. Logo, a moda é <b>' + v + '</b>.'] };
+  });
+
+  T('ang8', '8', 'Ângulos', (r) => {
+    const t = r.int(0, 2);
+    if (t === 0) {
+      const a = r.int(30, 80), b = r.int(30, 80), c = 180 - a - b;
+      return { q: 'Dois ângulos internos de um triângulo medem <b>' + a + '°</b> e <b>' + b + '°</b>. Quanto mede o terceiro?', ok: c + '°', v: c, meta: { t: t, a: a, b: b },
+        wrong: [[(a + b) + '°', 'Somou só os dois ângulos dados.'], [(360 - a - b) + '°', 'Usou 360° em vez de 180°.'], [(180 - Math.max(a, b)) + '°', 'Descontou só um dos ângulos.'], [(90 - Math.min(a, b)) + '°', 'Supôs que o triângulo é retângulo.']],
+        steps: ['A soma dos ângulos internos de um triângulo é 180°.', '180° ' + MINUS + ' ' + a + '° ' + MINUS + ' ' + b + '° = <b>' + c + '°</b>.'] };
+    }
+    if (t === 1) {
+      const x = r.int(20, 80);
+      return { q: 'Dois ângulos são <b>suplementares</b>. Se um mede <b>' + x + '°</b>, quanto mede o outro?', ok: (180 - x) + '°', v: 180 - x, meta: { t: t, x: x },
+        wrong: [[(90 - x) + '°', 'Usou 90°, que é a soma de ângulos complementares.'], [(360 - x) + '°', 'Usou 360°.'], [x + '°', 'Repetiu o ângulo dado.'], [(180 + x) + '°', 'Somou em vez de subtrair.']],
+        steps: ['Ângulos suplementares somam 180°.', '180° ' + MINUS + ' ' + x + '° = <b>' + (180 - x) + '°</b>.'] };
+    }
+    const n = r.pick([5, 6, 8]), v = (n - 2) * 180, names = { 5: 'pentágono', 6: 'hexágono', 8: 'octógono' };
+    return { q: 'Qual é a soma dos ângulos internos de um <b>' + names[n] + '</b> (' + n + ' lados)?', ok: v + '°', v: v, meta: { t: 2, n: n },
+      wrong: [[(n * 180) + '°', 'Multiplicou o número de lados por 180°.'], [((n - 1) * 180) + '°', 'Usou n ' + MINUS + ' 1 em vez de n ' + MINUS + ' 2.'], ['360°', 'Usou a soma dos ângulos do quadrilátero.'], [((n - 2) * 90) + '°', 'Usou 90° em vez de 180°.']],
+      steps: ['Soma dos ângulos internos = (n ' + MINUS + ' 2) × 180°.', '(' + n + ' ' + MINUS + ' 2) × 180° = <b>' + v + '°</b>.'] };
+  });
+
+  T('circ8', '8', 'Circunferência e círculo', (r) => {
+    const R = r.int(2, 10);
+    if (r.int(0, 1) === 0) {
+      const A = 314 * R * R;
+      return { q: 'Um círculo tem raio de <b>' + R + ' cm</b>. Qual é a sua <b>área</b>? (use π = 3,14)', ok: dec(A, 2) + ' cm²', v: A / 100, meta: { t: 0, R: R },
+        wrong: [[dec(2 * 314 * R, 2) + ' cm²', 'Calculou o comprimento da circunferência (2πr).'], [dec(314 * R, 2) + ' cm²', 'Esqueceu de elevar o raio ao quadrado.'], [dec(4 * 314 * R * R, 2) + ' cm²', 'Usou o diâmetro no lugar do raio.'], [dec(314 * 2 * R * R, 2) + ' cm²', 'Dobrou a área sem necessidade.']],
+        steps: ['Área do círculo = π · r².', '3,14 × ' + R + '² = 3,14 × ' + (R * R) + ' = <b>' + dec(A, 2) + ' cm²</b>.'] };
+    }
+    const C = 2 * 314 * R;
+    return { q: 'Um círculo tem raio de <b>' + R + ' cm</b>. Qual é o <b>comprimento</b> da sua circunferência? (use π = 3,14)', ok: dec(C, 2) + ' cm', v: C / 100, meta: { t: 1, R: R },
+      wrong: [[dec(314 * R * R, 2) + ' cm', 'Calculou a área (πr²), não o comprimento.'], [dec(314 * R, 2) + ' cm', 'Esqueceu o fator 2 (C = 2πr).'], [dec(4 * 314 * R, 2) + ' cm', 'Usou 4 em vez de 2.'], [dec(2 * 314 * R * R, 2) + ' cm', 'Elevou o raio ao quadrado.']],
+      steps: ['Comprimento da circunferência = 2 · π · r.', '2 × 3,14 × ' + R + ' = <b>' + dec(C, 2) + ' cm</b>.'] };
+  });
+
+  T('prob8', '8', 'Probabilidade simples', (r) => {
+    const R = r.int(2, 8), B = r.int(2, 8), G = r.int(0, 5), N = R + B + G;
+    const cor = G ? R + ' bolas vermelhas, ' + B + ' azuis e ' + G + ' verdes' : R + ' bolas vermelhas e ' + B + ' azuis';
+    return { q: 'Uma urna tem ' + cor + '. Retirando uma bola ao acaso, qual é a probabilidade de ela ser <b>vermelha</b>?', ok: Fs(R, N), v: R / N, meta: { R: R, B: B, G: G },
+      wrong: [[Fs(R, B), 'Comparou as vermelhas com as azuis. A probabilidade é parte ÷ total.'], [Fs(N - R, N), 'Calculou a probabilidade de NÃO ser vermelha.'], [Fs(1, N), 'Considerou todas as bolas igualmente prováveis de serem vermelhas.'], [Fs(R, N + R), 'Somou as vermelhas duas vezes ao total.']],
+      steps: ['Probabilidade = casos favoráveis ÷ casos possíveis.', 'Favoráveis: ' + R + '. Possíveis: ' + N + ' bolas.', F(R, N) + (gcd(R, N) > 1 ? ' = <b>' + Fs(R, N) + '</b>.' : '.')] };
+  });
+
+  /* ======================= 9º ANO ======================= */
+  T('raiz9', '9', 'Simplificação de radicais', (r) => {
+    const k = r.int(2, 9), b = r.pick([2, 3, 5, 6, 7]), n = k * k * b;
+    return { q: 'Simplifique ' + eq('√' + n) + '.', ok: k + '√' + b, v: n, meta: { k: k, b: b, n: n },
+      wrong: [[b + '√' + k, 'Trocou os papéis: o que sai da raiz é o ' + k + ' (raiz de ' + k * k + ').'], [(k * k) + '√' + b, 'Tirou ' + k * k + ' da raiz sem extrair a raiz quadrada.'], [k + ' + √' + b, 'Somou em vez de multiplicar.'], [String(n / 2), 'Dividiu por 2 em vez de extrair a raiz.'], ['√' + (n / b) + '·' + b, 'Não terminou a simplificação.']],
+      steps: ['Fatore: ' + n + ' = ' + (k * k) + ' × ' + b + ' (e ' + (k * k) + ' é um quadrado perfeito).', '√' + n + ' = √' + (k * k) + ' · √' + b + ' = <b>' + k + '√' + b + '</b>.'] };
+  });
+
+  const TRIPLES = [[3, 4, 5], [5, 12, 13], [6, 8, 10], [8, 15, 17], [9, 12, 15], [7, 24, 25], [12, 16, 20], [15, 20, 25], [20, 21, 29], [10, 24, 26]];
+  T('pit9', '9', 'Teorema de Pitágoras', (r) => {
+    const [a, b, c] = r.pick(TRIPLES);
+    if (r.int(0, 1) === 0) {
+      return { q: 'Os catetos de um triângulo retângulo medem <b>' + a + ' cm</b> e <b>' + b + ' cm</b>. Quanto mede a hipotenusa?', ok: c + ' cm', v: c, meta: { t: 0, a: a, b: b, c: c },
+        wrong: [[(a + b) + ' cm', 'Somou os catetos. A hipotenusa é a raiz da soma dos quadrados.'], [(a * a + b * b) + ' cm', 'Parou na soma dos quadrados, sem extrair a raiz.'], [(a * b) + ' cm', 'Multiplicou os catetos.'], [(c + 1) + ' cm', 'Errou a raiz quadrada.']],
+        steps: ['Pitágoras: a² + b² = c².', a + '² + ' + b + '² = ' + (a * a) + ' + ' + (b * b) + ' = ' + (c * c) + '.', 'c = √' + (c * c) + ' = <b>' + c + ' cm</b>.'] };
+    }
+    return { q: 'A hipotenusa de um triângulo retângulo mede <b>' + c + ' cm</b> e um dos catetos mede <b>' + a + ' cm</b>. Quanto mede o outro cateto?', ok: b + ' cm', v: b, meta: { t: 1, a: a, b: b, c: c },
+      wrong: [[(c - a) + ' cm', 'Subtraiu as medidas direto. É preciso trabalhar com os quadrados.'], [(c * c - a * a) + ' cm', 'Parou em c² ' + MINUS + ' a², sem extrair a raiz.'], [(c + a) + ' cm', 'Somou a hipotenusa ao cateto.'], [(b + 1) + ' cm', 'Errou a raiz quadrada.']],
+      steps: ['Pitágoras: c² = a² + b², logo b² = c² ' + MINUS + ' a².', 'b² = ' + (c * c) + ' ' + MINUS + ' ' + (a * a) + ' = ' + (b * b) + '.', 'b = √' + (b * b) + ' = <b>' + b + ' cm</b>.'] };
+  });
+
+  T('eq2', '9', 'Equação do 2º grau', (r) => {
+    let r1, r2;
+    do { r1 = r.int(-8, 8); r2 = r.int(-8, 8); } while (r1 === 0 || r2 === 0 || r1 === r2 || r1 + r2 === 0);
+    const p = -(r1 + r2), q = r1 * r2;
+    return { q: 'Quais são as raízes de ' + eq('x²' + term(p, 'x') + term(q, '') + ' = 0') + '?', ok: sortedRoots(r1, r2), v: [r1, r2].sort((x, y) => x - y).join(','), meta: { p: p, q: q, r1: r1, r2: r2 },
+      wrong: [[sortedRoots(-r1, -r2), 'Trocou o sinal das raízes. Se a soma das raízes é ' + sgn(-p) + ', os valores são os que somam ' + sgn(-p) + '.'], [sortedRoots(-r1, r2), 'Trocou o sinal de uma das raízes.'], [sortedRoots(r1, -r2), 'Trocou o sinal de uma das raízes.'], [sortedRoots(p, q), 'Tomou os coeficientes como se fossem as raízes.']],
+      steps: ['Procuramos dois números com <b>soma ' + sgn(-p) + '</b> e <b>produto ' + sgn(q) + '</b>.', 'Esses números são ' + sgn(r1) + ' e ' + sgn(r2) + '.', 'Logo: <b>' + sortedRoots(r1, r2) + '</b>.'] };
+  });
+
+  T('sist9', '9', 'Sistema de equações', (r) => {
+    const x = r.int(5, 15), y = r.int(1, x - 1), S = x + y, D = x - y;
+    const so = (a, b) => 'x = ' + a + ', y = ' + b;
+    return { q: 'Resolva o sistema ' + eq('x + y = ' + S) + ' e ' + eq('x ' + MINUS + ' y = ' + D) + '.', ok: so(x, y), v: x + ',' + y, meta: { S: S, D: D, x: x, y: y },
+      wrong: [[so(y, x), 'Trocou os valores de x e y.'], [so(S + D, S - D), 'Somou e subtraiu as equações, mas esqueceu de dividir por 2.'], [so(D, S - D), 'Tomou a diferença como o valor de x.'], [so(x + 1, y - 1), 'Errou a conta ao somar as equações.']],
+      steps: ['Somando as duas equações: 2x = ' + S + ' + ' + D + ' = ' + (S + D) + ', então x = ' + x + '.', 'Em x + y = ' + S + ': y = ' + S + ' ' + MINUS + ' ' + x + ' = ' + y + '.', 'Resposta: <b>' + so(x, y) + '</b>.'] };
+  });
+
+  T('pneg9', '9', 'Expoente negativo', (r) => {
+    const b = r.pick([2, 3, 5, 10]), n = r.int(2, 4), val = Math.pow(b, n);
+    return { q: 'Calcule ' + eq(b + sup(MINUS + n)) + '.', ok: F(1, val), v: 1 / val, meta: { b: b, n: n },
+      wrong: [[MINUS + val, 'Expoente negativo não deixa o número negativo: ele inverte a base.'], [MINUS + (b * n), 'Multiplicou a base pelo expoente e pôs sinal de menos.'], [String(val), 'Ignorou o sinal do expoente.'], [F(1, b * n), 'Multiplicou a base pelo expoente no denominador.']],
+      steps: ['Expoente negativo significa inverter: a' + sup(MINUS + 'n') + ' = ' + F(1, 'a' + sup('n')) + '.', b + sup(MINUS + n) + ' = ' + F(1, b + sup(n)) + ' = <b>' + F(1, val) + '</b>.'] };
+  });
+
+  /* ======================= ENSINO MÉDIO ======================= */
+  T('afim_em', 'em', 'Função afim', (r) => {
+    const a = r.pick([2, 3, 4, 5, -2, -3, -4]); let b = 0; while (b === 0) b = r.int(-9, 9);
+    const fx = 'f(x) = ' + (a < 0 ? MINUS : '') + (Math.abs(a) === 1 ? '' : Math.abs(a)) + 'x' + term(b, '');
+    if (r.int(0, 1) === 0) {
+      let k = 0; while (k === 0) k = r.int(-4, 6); const v = a * k + b;
+      return { q: 'Dada ' + eq(fx) + ', calcule <b>f(' + sgn(k) + ')</b>.', ok: sgn(v), v: v, meta: { t: 0, a: a, b: b, k: k },
+        wrong: [[sgn(a + k + b), 'Somou os valores em vez de multiplicar a por x.'], [sgn(a * k - b), 'Trocou o sinal do termo independente.'], [sgn(a * (k + b)), 'Distribuiu o a sobre a soma k + b.'], [sgn((a + b) * k), 'Multiplicou k pela soma dos coeficientes.']],
+        steps: ['Substitua x por ' + sgn(k) + '.', 'f(' + sgn(k) + ') = ' + sgn(a) + ' × ' + (k < 0 ? '(' + sgn(k) + ')' : k) + (b < 0 ? ' ' + MINUS + ' ' : ' + ') + Math.abs(b) + ' = <b>' + sgn(v) + '</b>.'] };
+    }
+    let x0 = 0; while (x0 === 0) x0 = r.int(-6, 8);
+    const bb = -a * x0, fx2 = 'f(x) = ' + (a < 0 ? MINUS : '') + (Math.abs(a) === 1 ? '' : Math.abs(a)) + 'x' + term(bb, '');
+    return { q: 'Qual é o <b>zero</b> (raiz) da função ' + eq(fx2) + '?', ok: 'x = ' + sgn(x0), v: x0, meta: { t: 1, a: a, b: bb, x0: x0 },
+      wrong: [['x = ' + sgn(-x0), 'Esqueceu de trocar o sinal ao passar o termo independente.'], ['x = ' + sgn(bb), 'Não dividiu por ' + sgn(a) + '.'], ['x = ' + sgn(-bb), 'Passou o termo corretamente, mas não dividiu por ' + sgn(a) + '.'], ['x = ' + sgn(x0 + 1), 'Errou a conta final.']],
+      steps: ['O zero da função é o valor de x para o qual f(x) = 0.', sgn(a) + 'x' + term(bb, '') + ' = 0, então ' + sgn(a) + 'x = ' + sgn(-bb) + '.', 'Dividindo: <b>x = ' + sgn(x0) + '</b>.'] };
+  });
+
+  T('quad_em', 'em', 'Função quadrática', (r) => {
+    let bb = 0; while (bb === 0) bb = 2 * r.int(-5, 5);
+    const c = r.int(-9, 12), xv = -bb / 2, yv = c - bb * bb / 4;
+    const fx = 'f(x) = x²' + term(bb, 'x') + term(c, '');
+    if (r.int(0, 1) === 0) {
+      return { q: 'Qual é a <b>abscissa do vértice</b> da parábola ' + eq(fx) + '?', ok: sgn(xv), v: xv, meta: { t: 0, b: bb, c: c },
+        wrong: [[sgn(-bb), 'Usou ' + MINUS + 'b em vez de ' + MINUS + 'b ÷ 2a. Faltou dividir por 2.'], [sgn(bb / 2), 'Errou o sinal da fórmula (é ' + MINUS + 'b ÷ 2a).'], [sgn(c), 'Tomou o termo independente como abscissa.'], [sgn(xv + 1), 'Errou a conta final.']],
+        steps: ['Abscissa do vértice: x' + '<sub>v</sub> = ' + MINUS + 'b ÷ (2a).', 'Aqui a = 1 e b = ' + sgn(bb) + ': x<sub>v</sub> = ' + sgn(-bb) + ' ÷ 2 = <b>' + sgn(xv) + '</b>.'] };
+    }
+    return { q: 'Qual é o <b>valor mínimo</b> de ' + eq(fx) + '?', ok: sgn(yv), v: yv, meta: { t: 1, b: bb, c: c },
+      wrong: [[sgn(c), 'Deu o valor em x = 0, não o valor mínimo.'], [sgn(xv), 'Deu a abscissa do vértice (onde ocorre o mínimo), e não o valor do mínimo.'], [sgn(-yv), 'Errou o sinal.'], [sgn(yv + 2), 'Errou a conta ao substituir.']],
+      steps: ['O mínimo ocorre em x<sub>v</sub> = ' + MINUS + 'b ÷ 2a = ' + sgn(xv) + '.', 'Substituindo: f(' + sgn(xv) + ') = ' + (xv < 0 ? '(' + sgn(xv) + ')' : xv) + '² ' + (bb < 0 ? MINUS : '+') + ' ' + Math.abs(bb) + ' · ' + (xv < 0 ? '(' + sgn(xv) + ')' : xv) + (c < 0 ? ' ' + MINUS + ' ' : ' + ') + Math.abs(c) + ' = <b>' + sgn(yv) + '</b>.'] };
+  });
+
+  T('pa_em', 'em', 'Progressão aritmética', (r) => {
+    const a1 = r.int(1, 10), d = r.int(2, 7), n = r.int(8, 20), v = a1 + (n - 1) * d;
+    return { q: 'Em uma PA, o primeiro termo é <b>' + a1 + '</b> e a razão é <b>' + d + '</b>. Qual é o <b>' + n + 'º termo</b>?', ok: String(v), v: v, meta: { a1: a1, d: d, n: n },
+      wrong: [[String(a1 + n * d), 'Usou n em vez de (n ' + MINUS + ' 1). O primeiro termo já está contado.'], [String(a1 + (n + 1) * d), 'Usou n + 1 em vez de n ' + MINUS + ' 1.'], [String(n * d), 'Multiplicou n pela razão, ignorando o primeiro termo.'], [String(a1 * d * (n - 1)), 'Multiplicou em vez de somar.']],
+      steps: ['Termo geral da PA: a<sub>n</sub> = a<sub>1</sub> + (n ' + MINUS + ' 1) · r.', 'a<sub>' + n + '</sub> = ' + a1 + ' + ' + (n - 1) + ' × ' + d + ' = <b>' + v + '</b>.'] };
+  });
+
+  T('pg_em', 'em', 'Progressão geométrica', (r) => {
+    const a1 = r.int(1, 5), q = r.pick([2, 3]), n = r.int(4, 6), v = a1 * Math.pow(q, n - 1);
+    return { q: 'Em uma PG, o primeiro termo é <b>' + a1 + '</b> e a razão é <b>' + q + '</b>. Qual é o <b>' + n + 'º termo</b>?', ok: String(v), v: v, meta: { a1: a1, q: q, n: n },
+      wrong: [[String(a1 * Math.pow(q, n)), 'Usou o expoente n em vez de n ' + MINUS + ' 1.'], [String(a1 + (n - 1) * q), 'Usou a fórmula da PA (soma) em vez de potência.'], [String(a1 * q * (n - 1)), 'Multiplicou a razão por (n ' + MINUS + ' 1), em vez de elevar.'], [String(Math.pow(a1 * q, n - 1)), 'Elevou o produto a1 · q ao expoente.']],
+      steps: ['Termo geral da PG: a<sub>n</sub> = a<sub>1</sub> · q' + sup('n' + MINUS + '1') + '.', 'a<sub>' + n + '</sub> = ' + a1 + ' × ' + q + sup(n - 1) + ' = ' + a1 + ' × ' + Math.pow(q, n - 1) + ' = <b>' + v + '</b>.'] };
+  });
+
+  T('comb_em', 'em', 'Análise combinatória', (r) => {
+    const t = r.int(0, 2);
+    if (t === 0) {
+      const n = r.int(4, 5), v = fact(n);
+      return { q: 'Quantos anagramas distintos tem uma palavra de <b>' + n + ' letras todas diferentes</b>?', ok: String(v), v: v, meta: { t: t, n: n },
+        wrong: [[String(n * n), 'Elevou ao quadrado. Cada posição tem uma opção a menos que a anterior.'], [String(2 * n), 'Multiplicou por 2.'], [String(fact(n - 1)), 'Usou (n ' + MINUS + ' 1)! em vez de n!.'], [String(n * (n - 1)), 'Parou depois de duas posições.']],
+        steps: ['1ª posição: ' + n + ' opções; 2ª: ' + (n - 1) + '; e assim por diante até 1.', n + '! = <b>' + v + '</b>.'] };
+    }
+    if (t === 1) {
+      const n = r.int(5, 12), v = n * (n - 1) / 2;
+      return { q: 'De um grupo de <b>' + n + ' pessoas</b> escolhem-se <b>2</b> para formar uma dupla. Quantas duplas diferentes são possíveis?', ok: String(v), v: v, meta: { t: t, n: n },
+        wrong: [[String(n * (n - 1)), 'Contou a ordem. A dupla (A, B) é a mesma que (B, A), então divide-se por 2.'], [String(n * n), 'Permitiu repetir a mesma pessoa.'], [String(2 * n), 'Multiplicou n por 2.'], [String(n * (n - 1) / 2 + n), 'Somou n ao resultado correto.']],
+        steps: ['Escolher 2 entre ' + n + ' sem importar a ordem é a combinação C(' + n + ', 2).', 'C(' + n + ', 2) = (' + n + ' × ' + (n - 1) + ') ÷ 2 = <b>' + v + '</b>.'] };
+    }
+    const a = r.int(2, 6), b = r.int(2, 6), c = r.int(2, 5), v = a * b * c;
+    return { q: 'Marina tem <b>' + a + ' camisas</b>, <b>' + b + ' calças</b> e <b>' + c + ' pares de sapato</b>. De quantos modos diferentes ela pode se vestir usando uma peça de cada?', ok: String(v), v: v, meta: { t: 2, a: a, b: b, c: c },
+      wrong: [[String(a + b + c), 'Somou as quantidades. Escolhas independentes se multiplicam (princípio multiplicativo).'], [String(a * b + c), 'Multiplicou só duas das categorias.'], [String(a * b + b * c), 'Misturou soma e produto.'], [String(a * b * c + a), 'Errou a conta final.']],
+      steps: ['Cada escolha é independente, então multiplicamos.', a + ' × ' + b + ' × ' + c + ' = <b>' + v + '</b>.'] };
+  });
+
+  T('prob_em', 'em', 'Probabilidade', (r) => {
+    if (r.int(0, 1) === 0) {
+      const s = r.int(3, 11), cnt = Math.min(s - 1, 13 - s);
+      return { q: 'Lançando <b>dois dados</b> honestos, qual é a probabilidade de a <b>soma</b> dos resultados ser <b>' + s + '</b>?', ok: Fs(cnt, 36), v: cnt / 36, meta: { t: 0, s: s, cnt: cnt },
+        wrong: [[F(1, 11), 'Supôs que as 11 somas possíveis (2 a 12) são igualmente prováveis. Elas não são.'], [Fs(1, s), 'Usou a própria soma como denominador.'], [Fs(cnt, 12), 'Usou 12 como total de casos, mas são 36 (6 × 6).'], [Fs(cnt + 1, 36), 'Contou um caso a mais.']],
+        steps: ['Há 6 × 6 = 36 resultados possíveis.', 'Pares com soma ' + s + ': ' + cnt + '.', F(cnt, 36) + (gcd(cnt, 36) > 1 ? ' = <b>' + Fs(cnt, 36) + '</b>.' : '.')] };
+    }
+    const n = r.int(6, 10), R = r.int(3, n - 1), num = R * (R - 1), den = n * (n - 1);
+    return { q: 'Uma urna tem <b>' + R + ' bolas vermelhas</b> e <b>' + (n - R) + ' azuis</b>. Retiram-se <b>2 bolas, uma após a outra, sem reposição</b>. Qual é a probabilidade de ambas serem vermelhas?', ok: Fs(num, den), v: num / den, meta: { t: 1, n: n, R: R },
+      wrong: [[Fs(R * R, n * n), 'Tratou como se houvesse reposição. Na segunda retirada sobram menos bolas.'], [Fs(R, n), 'Considerou só a primeira retirada.'], [Fs(R * R, den), 'Esqueceu de diminuir 1 do numerador na segunda retirada.'], [Fs(2 * R, n), 'Somou as probabilidades.']],
+      steps: ['1ª bola vermelha: ' + F(R, n) + '. Sobram ' + (R - 1) + ' vermelhas em ' + (n - 1) + ' bolas.', '2ª bola vermelha: ' + F(R - 1, n - 1) + '.', 'Multiplicando: ' + F(R, n) + ' × ' + F(R - 1, n - 1) + ' = ' + F(num, den) + (gcd(num, den) > 1 ? ' = <b>' + Fs(num, den) + '</b>.' : '.')] };
+  });
+
+  T('log_em', 'em', 'Logaritmo', (r) => {
+    const b = r.pick([2, 3, 5, 10]), k = r.int(2, 5), N = Math.pow(b, k);
+    return { q: 'Calcule ' + eq('log<sub>' + b + '</sub> ' + N) + '.', ok: String(k), v: k, meta: { b: b, k: k, N: N },
+      wrong: [[String(N / b), 'Dividiu o número pela base. O logaritmo é o expoente.'], [String(N - b), 'Subtraiu a base do número.'], [String(b * k), 'Multiplicou a base pelo expoente.'], [String(k + 1), 'Errou a contagem do expoente.']],
+      steps: ['log<sub>' + b + '</sub> ' + N + ' é o expoente x tal que ' + b + sup('x') + ' = ' + N + '.', b + sup(k) + ' = ' + N + ', então <b>x = ' + k + '</b>.'] };
+  });
+
+  T('trig_em', 'em', 'Trigonometria no triângulo retângulo', (r) => {
+    const [a, b, c] = r.pick([[3, 4, 5], [5, 12, 13], [6, 8, 10], [8, 15, 17]]), t = r.int(0, 2);
+    const base = 'Em um triângulo retângulo, os catetos medem <b>' + a + ' cm</b> e <b>' + b + ' cm</b> e a hipotenusa mede <b>' + c + ' cm</b>. ';
+    if (t === 0) return { q: base + 'Qual é o <b>seno</b> do ângulo oposto ao cateto de ' + a + ' cm?', ok: Fs(a, c), v: a / c, meta: { t: t, a: a, b: b, c: c },
+      wrong: [[Fs(b, c), 'Usou o cateto adjacente. O seno usa o cateto oposto.'], [Fs(a, b), 'Dividiu pelo outro cateto: isso é a tangente.'], [Fs(c, a), 'Inverteu a fração.'], [Fs(b, a), 'Dividiu o adjacente pelo oposto.']],
+      steps: ['sen = cateto oposto ÷ hipotenusa.', F(a, c) + (gcd(a, c) > 1 ? ' = <b>' + Fs(a, c) + '</b>.' : '.')] };
+    if (t === 1) return { q: base + 'Qual é o <b>cosseno</b> do ângulo oposto ao cateto de ' + a + ' cm?', ok: Fs(b, c), v: b / c, meta: { t: t, a: a, b: b, c: c },
+      wrong: [[Fs(a, c), 'Usou o cateto oposto. O cosseno usa o cateto adjacente.'], [Fs(a, b), 'Dividiu pelo outro cateto: isso é a tangente.'], [Fs(c, b), 'Inverteu a fração.'], [Fs(b, a), 'Dividiu o adjacente pelo oposto.']],
+      steps: ['cos = cateto adjacente ÷ hipotenusa.', F(b, c) + (gcd(b, c) > 1 ? ' = <b>' + Fs(b, c) + '</b>.' : '.')] };
+    return { q: base + 'Qual é a <b>tangente</b> do ângulo oposto ao cateto de ' + a + ' cm?', ok: Fs(a, b), v: a / b, meta: { t: t, a: a, b: b, c: c },
+      wrong: [[Fs(b, a), 'Inverteu a fração. A tangente é oposto ÷ adjacente.'], [Fs(a, c), 'Dividiu pela hipotenusa: isso é o seno.'], [Fs(b, c), 'Dividiu o adjacente pela hipotenusa: isso é o cosseno.'], [Fs(c, a), 'Dividiu a hipotenusa pelo cateto oposto.']],
+      steps: ['tg = cateto oposto ÷ cateto adjacente.', F(a, b) + (gcd(a, b) > 1 ? ' = <b>' + Fs(a, b) + '</b>.' : '.')] };
+  });
+
+  T('juros_em', 'em', 'Juros compostos', (r) => {
+    const C = 100 * r.int(5, 50), i = r.pick([10, 20]), v = C * (100 + i) * (100 + i) / 10000;
+    return { q: 'Aplicam-se <b>' + brl(C) + '</b> a juros <b>compostos</b> de <b>' + i + '% ao mês</b>. Qual é o montante após <b>2 meses</b>?', ok: brl(v), v: v, meta: { C: C, i: i },
+      wrong: [[brl(C * (100 + 2 * i) / 100), 'Calculou juros simples (' + (2 * i) + '% sobre o capital). Nos compostos, o 2º mês rende sobre o montante do 1º.'], [brl(C * (100 + i) / 100), 'Aplicou o juro de um mês só.'], [brl(2 * C * (100 + i) / 100), 'Dobrou o montante do 1º mês.'], [brl(C + 2 * i), 'Somou ' + (2 * i) + ' reais em vez de ' + (2 * i) + '%.']],
+      steps: ['Montante = C · (1 + i)' + sup('n') + '.', 'M = ' + C + ' × ' + dec(100 + i, 2) + sup(2) + ' = ' + C + ' × ' + dec((100 + i) * (100 + i), 4) + '.', 'M = <b>' + brl(v) + '</b>.'] };
+  });
+
+  /* ---------------------------------------------------------------- séries e montagem */
+  const LEVELS = [
+    { id: '6', nome: '6º ano', curto: '6º' },
+    { id: '7', nome: '7º ano', curto: '7º' },
+    { id: '8', nome: '8º ano', curto: '8º' },
+    { id: '9', nome: '9º ano', curto: '9º' },
+    { id: 'em', nome: 'Ensino Médio', curto: 'EM' },
+  ];
+  const byId = {}; TOPICS.forEach((t) => { byId[t.id] = t; });
+  function topicsOf(level) { return TOPICS.filter((t) => t.level === level); }
+
+  function build(topicId, seed) {
+    const topic = byId[topicId];
+    const r = makeRng(mix(seed, hashStr(topicId)));
+    for (let tries = 0; tries < 80; tries++) {
+      const g = topic.f(r);
+      const seen = new Set([plain(g.ok)]); const opts = [];
+      const ws = r.shuffle(g.wrong);
+      for (let i = 0; i < ws.length && opts.length < 3; i++) {
+        const k = plain(ws[i][0]); if (seen.has(k)) continue;
+        seen.add(k); opts.push({ t: ws[i][0], ok: false, why: ws[i][1] });
+      }
+      if (opts.length < 3) continue;
+      const all = r.shuffle([{ t: g.ok, ok: true }].concat(opts));
+      return { topic: topicId, level: topic.level, nome: topic.nome, q: g.q, options: all, steps: g.steps, v: g.v, meta: g.meta || null, ok: g.ok };
+    }
+    throw new Error('sem distratores suficientes: ' + topicId + ' seed ' + seed);
+  }
+
+  /* Plano do dia: até 2 revisões (tópicos vencidos) + tópicos da série, sem repetir tópico. */
+  function plan(level, day, due, n) {
+    n = n || 5;
+    const ts = topicsOf(level).map((t) => t.id);
+    const r = makeRng(mix(day, hashStr('plano' + level)));
+    const out = []; const used = new Set();
+    (due || []).filter((id) => ts.indexOf(id) >= 0).slice(0, 2).forEach((id) => {
+      out.push({ topic: id, seed: mix(day, hashStr(id), 1), review: true }); used.add(id);
+    });
+    r.shuffle(ts).forEach((id) => {
+      if (out.length >= n || used.has(id)) return;
+      out.push({ topic: id, seed: mix(day, hashStr(id)), review: false }); used.add(id);
+    });
+    return r.shuffle(out);
+  }
+
+  const api = { TOPICS, LEVELS, build, plan, topicsOf, plain, mix, hashStr, makeRng, gcd, lcm, dec, MINUS };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.TreinoEngine = api;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+</script>
+<script>
+(function () {
+  'use strict';
+  var E = window.TreinoEngine, MINUS = E.MINUS;
+  var $ = function (id) { return document.getElementById(id); };
+  var LETRAS = ['A', 'B', 'C', 'D'];
+  var INTERVALOS = [1, 2, 4, 7, 14];
+
+  /* ---------------------------------------------------------- armazenamento (só neste aparelho) */
+  var KEY = 'treino_do_dia_v1', mem = null;
+  function carregar() {
+    var s = null;
+    try { s = JSON.parse(localStorage.getItem(KEY)); } catch (e) { s = mem; }
+    if (!s || typeof s !== 'object') s = {};
+    s.level = s.level || '7'; s.hist = s.hist || {}; s.box = s.box || {}; s.errs = s.errs || []; s.today = s.today || null;
+    return s;
+  }
+  function salvar() { mem = S; try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* modo privado: segue só na memória */ } }
+  var S = carregar();
+
+  /* dia local como número inteiro (igual para todos no mesmo dia) */
+  function hoje() { var d = new Date(); return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000); }
+  function dataDe(n) { return new Date(n * 86400000); }
+  var DIA = hoje();
+
+  function planoDoDia(level) {
+    if (!S.today || S.today.day !== DIA) S.today = { day: DIA, by: {} };
+    var t = S.today.by[level];
+    if (!t) {
+      var due = Object.keys(S.box).filter(function (id) { return S.box[id].d <= DIA; })
+        .sort(function (a, b) { return S.box[a].b - S.box[b].b; });
+      t = S.today.by[level] = { items: E.plan(level, DIA, due, 5), ans: [], extra: 0, counted: false };
+      salvar();
+    }
+    return t;
+  }
+
+  /* ---------------------------------------------------------- sequência */
+  function feito(n) { return S.hist[n] !== undefined; }
+  function sequencia() {
+    var n = DIA, c = 0;
+    if (!feito(n)) n--;            // hoje ainda não fez: a sequência de ontem continua viva
+    while (feito(n)) { c++; n--; }
+    return c;
+  }
+
+  /* ---------------------------------------------------------- telas */
+  var tela = 'home';
+  function mostrar(t) {
+    tela = t;
+    $('home').hidden = t !== 'home'; $('quiz').hidden = t !== 'quiz'; $('result').hidden = t !== 'result';
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------------------------------------------------------- home */
+  function desenharSeries() {
+    var box = $('series'); box.innerHTML = '';
+    E.LEVELS.forEach(function (L) {
+      var lab = document.createElement('label'); lab.className = 'chip';
+      var inp = document.createElement('input'); inp.type = 'radio'; inp.name = 'serie'; inp.value = L.id; inp.checked = S.level === L.id;
+      inp.addEventListener('change', function () { S.level = L.id; salvar(); desenharHome(); });
+      var sp = document.createElement('span'); sp.textContent = L.nome;
+      lab.appendChild(inp); lab.appendChild(sp); box.appendChild(lab);
+    });
+  }
+  var SEM = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
+  function desenharHome() {
+    var t = planoDoDia(S.level), resp = t.ans.filter(function (x) { return x !== undefined && x !== null; }).length, fim = resp >= t.items.length;
+    var sq = sequencia();
+    $('seqN').textContent = sq; $('seqT').textContent = sq === 1 ? 'dia seguido' : 'dias seguidos';
+    $('hojeT').textContent = fim ? 'Hoje: ' + S.hist[DIA] + '/' + t.items.length + ' ✓' : (resp ? 'Hoje: ' + resp + '/' + t.items.length : 'Hoje: ainda não treinou');
+    var d = $('dias'); d.innerHTML = '';
+    for (var k = 6; k >= 0; k--) {
+      var n = DIA - k, cell = document.createElement('div');
+      var l = document.createElement('div'); l.className = 'd'; l.textContent = SEM[dataDe(n).getUTCDay()];
+      var b = document.createElement('div'); b.className = 'b' + (feito(n) ? ' feito' : '') + (k === 0 ? ' hoje' : ''); b.textContent = feito(n) ? S.hist[n] : '';
+      cell.appendChild(l); cell.appendChild(b); d.appendChild(cell);
+    }
+    $('btnIniciar').hidden = fim;
+    $('btnIniciar').textContent = resp ? 'Continuar o treino (' + resp + '/' + t.items.length + ')' : 'Começar o treino de hoje';
+    $('btnVer').hidden = !fim; $('btnMais').hidden = !fim;
+    var ne = S.errs.length; $('btnErros').hidden = ne === 0;
+    $('btnErros').textContent = 'Revisar meus erros (' + ne + ')';
+  }
+
+  /* ---------------------------------------------------------- sessão de questões */
+  var sess = null;   // { kind, items, i, ans:[], qs:[] }
+  function iniciarSessao(kind, items, ansIni) {
+    sess = { kind: kind, items: items, i: 0, ans: ansIni ? ansIni.slice() : [], qs: items.map(function (it) { return E.build(it.topic, it.seed); }) };
+    // vai para a primeira não respondida
+    var k = 0; while (k < items.length && sess.ans[k] !== undefined && sess.ans[k] !== null) k++;
+    sess.i = Math.min(k, items.length - 1);
+    if (k >= items.length) { terminar(); return; }
+    mostrar('quiz'); desenharQuestao();
+  }
+  function desenharProgresso() {
+    var p = $('prog'); p.innerHTML = '';
+    sess.items.forEach(function (_, k) {
+      var i = document.createElement('i'), a = sess.ans[k];
+      if (a !== undefined && a !== null) i.className = sess.qs[k].options[a].ok ? 'ok' : 'no'; else if (k === sess.i) i.className = 'on';
+      p.appendChild(i);
+    });
+  }
+  function desenharQuestao() {
+    var q = sess.qs[sess.i], it = sess.items[sess.i], a = sess.ans[sess.i], resp = a !== undefined && a !== null;
+    $('qCont').textContent = 'Questão ' + (sess.i + 1) + ' de ' + sess.items.length;
+    $('qTag').textContent = q.nome; $('qRev').hidden = !it.review;
+    $('qEnun').innerHTML = q.q;
+    var ul = $('qOps'); ul.innerHTML = '';
+    q.options.forEach(function (o, k) {
+      var li = document.createElement('li'), b = document.createElement('button');
+      b.type = 'button'; b.className = 'op'; b.setAttribute('data-k', k);
+      b.innerHTML = '<span class="l" aria-hidden="true">' + LETRAS[k] + '</span><span class="tx">' + o.t + '</span><span class="ic" aria-hidden="true"></span>';
+      b.setAttribute('aria-label', 'Alternativa ' + LETRAS[k] + ': ' + E.plain(o.t));
+      b.addEventListener('click', function () { responder(k); });
+      li.appendChild(b); ul.appendChild(li);
+    });
+    $('qFb').innerHTML = ''; $('btnProx').hidden = true;
+    desenharProgresso();
+    if (resp) pintar(a, false);
+  }
+  function pintar(k, foco) {
+    var q = sess.qs[sess.i], bs = $('qOps').querySelectorAll('.op'), acertou = q.options[k].ok;
+    bs.forEach(function (b, j) {
+      b.disabled = true;
+      var ic = b.querySelector('.ic');
+      if (q.options[j].ok) { b.classList.add('certa'); ic.textContent = '✓'; b.setAttribute('aria-label', b.getAttribute('aria-label') + ' (correta)'); }
+      else if (j === k) { b.classList.add('errada'); ic.textContent = '✗'; b.setAttribute('aria-label', b.getAttribute('aria-label') + ' (sua resposta, errada)'); }
+      else b.classList.add('apagada');
+    });
+    var fb = $('qFb'), h = '';
+    if (acertou) {
+      h += '<div class="fb ok"><h3>Isso mesmo!</h3></div>';
+      h += '<details class="res"><summary>Ver a resolução</summary><ol>' + q.steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol></details>';
+    } else {
+      h += '<div class="fb no"><h3>Não foi essa.</h3><p>' + q.options[k].why + '</p></div>';
+      h += '<div class="res"><span class="rot">Resolução</span><ol>' + q.steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol></div>';
+    }
+    fb.innerHTML = h;
+    var ultima = sess.i === sess.items.length - 1;
+    $('btnProx').textContent = ultima ? 'Ver resultado' : 'Próxima questão'; $('btnProx').hidden = false;
+    if (foco) $('btnProx').focus({ preventScroll: true });
+    if (foco) { var f = fb.firstChild; if (f && f.scrollIntoView) f.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+    $('live').textContent = acertou ? 'Resposta correta.' : 'Resposta errada. A correta é a alternativa ' + LETRAS[q.options.findIndex(function (o) { return o.ok; })] + '.';
+  }
+  function responder(k) {
+    if (sess.ans[sess.i] !== undefined && sess.ans[sess.i] !== null) return;
+    var q = sess.qs[sess.i], it = sess.items[sess.i], acertou = q.options[k].ok;
+    sess.ans[sess.i] = k;
+    if (sess.kind === 'daily') { var t = planoDoDia(S.level); t.ans = sess.ans.slice(); }
+    registrar(it, acertou);
+    salvar(); desenharProgresso(); pintar(k, true);
+  }
+  /* Leitner por tópico + caderno de erros */
+  function registrar(it, acertou) {
+    var id = it.topic, b = S.box[id] || { b: 0, d: DIA };
+    if (acertou) { b.b = Math.min(b.b + 1, 4); b.d = DIA + INTERVALOS[b.b]; } else { b.b = 0; b.d = DIA + 1; }
+    S.box[id] = b;
+    var pos = -1; S.errs.forEach(function (e, j) { if (e.t === id && e.s === it.seed) pos = j; });
+    if (!acertou && pos < 0) { S.errs.push({ t: id, s: it.seed }); if (S.errs.length > 30) S.errs.shift(); }
+    if (acertou && pos >= 0 && sess.kind === 'erros') S.errs.splice(pos, 1);
+  }
+  function proxima() {
+    if (sess.i < sess.items.length - 1) { sess.i++; desenharQuestao(); window.scrollTo(0, 0); } else terminar();
+  }
+
+  /* ---------------------------------------------------------- resultado */
+  var ultimo = null;   // { nota, tot, marcas:[bool], kind }
+  function terminar() {
+    var marcas = sess.qs.map(function (q, k) { return q.options[sess.ans[k]].ok; });
+    var nota = marcas.filter(Boolean).length, tot = marcas.length;
+    if (sess.kind === 'daily' && S.hist[DIA] === undefined) { S.hist[DIA] = nota; var ks = Object.keys(S.hist).map(Number).sort(function (a, b) { return a - b; }); while (ks.length > 90) delete S.hist[ks.shift()]; }
+    salvar();
+    ultimo = { nota: nota, tot: tot, marcas: marcas, kind: sess.kind };
+    mostrarResultado();
+  }
+  function mostrarResultado() {
+    var u = ultimo, L = E.LEVELS.filter(function (x) { return x.id === S.level; })[0];
+    $('rTit').textContent = u.kind === 'daily' ? 'Treino de hoje · ' + L.nome : u.kind === 'erros' ? 'Revisão dos erros' : 'Treino extra · ' + L.nome;
+    $('rNota').textContent = u.nota; $('rTot').textContent = u.tot;
+    var bol = $('rBol'); bol.innerHTML = '';
+    u.marcas.forEach(function (m) { var i = document.createElement('i'); i.className = m ? 'ok' : 'no'; i.textContent = m ? '✓' : '✗'; bol.appendChild(i); });
+    var msg;
+    if (u.nota === u.tot) msg = 'Gabaritou! Dia perfeito.';
+    else if (u.nota >= u.tot - 1) msg = 'Muito bem! Falta pouco para o gabarito.';
+    else if (u.nota >= Math.ceil(u.tot / 2)) msg = 'Bom trabalho. Os erros de hoje são o que mais ensina.';
+    else msg = 'Treino feito, e isso já conta. Errar faz parte de aprender.';
+    $('rMsg').textContent = msg;
+    var vol = $('rVol');
+    if (u.nota < u.tot && u.kind !== 'erros') { vol.hidden = false; vol.textContent = 'Os assuntos que você errou voltam nos próximos treinos para você fixar. Eles também ficam guardados em “Revisar meus erros”.'; }
+    else if (u.kind === 'erros') { vol.hidden = false; vol.textContent = S.errs.length ? 'Ainda restam ' + S.errs.length + ' questão(ões) no caderno de erros. Acertando, elas saem da lista.' : 'Caderno de erros zerado!'; }
+    else vol.hidden = true;
+    $('btnShare').hidden = u.kind !== 'daily'; $('shareMsg').textContent = '';
+    mostrar('result');
+  }
+
+  /* ---------------------------------------------------------- cartão para compartilhar */
+  function urlDaSerie() {
+    var base = location.origin && location.origin !== 'null' ? location.origin + location.pathname : '';
+    return base ? base + '?serie=' + S.level : '';
+  }
+  function textoShare() {
+    var u = ultimo, sq = sequencia(), L = E.LEVELS.filter(function (x) { return x.id === S.level; })[0];
+    return 'Fiz o Treino do Dia de Matemática (' + L.nome + '): ' + u.nota + '/' + u.tot + (sq > 1 ? ' · ' + sq + ' dias seguidos' : '') + '. Consegue fazer melhor? ' + urlDaSerie();
+  }
+  function cartao() {
+    var u = ultimo, L = E.LEVELS.filter(function (x) { return x.id === S.level; })[0], sq = sequencia();
+    var W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H; var g = c.getContext('2d');
+    g.fillStyle = '#0F2547'; g.fillRect(0, 0, W, H);
+    g.strokeStyle = 'rgba(255,255,255,.06)'; g.lineWidth = 2;
+    for (var x = 0; x <= W; x += 54) { g.beginPath(); g.moveTo(x, 0); g.lineTo(x, H); g.stroke(); }
+    for (var y = 0; y <= H; y += 54) { g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke(); }
+    var F = '"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif';
+    g.textAlign = 'center'; g.fillStyle = '#FFD23F'; g.font = '800 64px ' + F; g.fillText('Treino do Dia', W / 2, 210);
+    g.fillStyle = '#C9D5E8'; g.font = '600 42px ' + F; g.fillText('Matemática · ' + L.nome, W / 2, 278);
+    g.fillStyle = '#FFFFFF'; g.font = '800 330px ' + F; g.fillText(u.nota + '/' + u.tot, W / 2, 660);
+    var r = 46, gap = 30, tot = u.marcas.length * 2 * r + (u.marcas.length - 1) * gap, x0 = (W - tot) / 2 + r;
+    u.marcas.forEach(function (m, k) {
+      var cx = x0 + k * (2 * r + gap); g.beginPath(); g.arc(cx, 790, r, 0, 6.2832); g.fillStyle = m ? '#2E9E57' : '#E0566F'; g.fill();
+      g.fillStyle = '#fff'; g.font = '800 50px ' + F; g.fillText(m ? '✓' : '✗', cx, 808);
+    });
+    if (sq > 1) { g.fillStyle = '#FFD23F'; g.font = '800 72px ' + F; g.fillText(sq + ' dias seguidos', W / 2, 960); }
+    g.fillStyle = '#FFFFFF'; g.font = '700 50px ' + F; g.fillText('Consegue fazer melhor?', W / 2, 1090);
+    g.fillStyle = '#C9D5E8'; g.font = '600 38px ' + F; g.fillText('5 questões por dia · grátis · sem cadastro', W / 2, 1160);
+    g.fillStyle = '#FFD23F'; g.font = '700 40px ' + F; g.fillText('@mathematicand0', W / 2, 1260);
+    return c;
+  }
+  function compartilhar() {
+    var msg = $('shareMsg'), texto = textoShare();
+    function baixar(blob) {
+      var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'treino-do-dia.png';
+      document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+      msg.textContent = 'Imagem salva. Agora é só enviar para quem você quiser.';
+    }
+    var cv; try { cv = cartao(); } catch (e) { cv = null; }
+    function porTexto() {
+      if (navigator.share) { navigator.share({ text: texto }).catch(function () { }); }
+      else if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(texto).then(function () { msg.textContent = 'Texto copiado. Cole onde quiser.'; }); }
+      else { msg.textContent = texto; }
+    }
+    if (!cv || !cv.toBlob) { porTexto(); return; }
+    cv.toBlob(function (blob) {
+      if (!blob) { porTexto(); return; }
+      var file; try { file = new File([blob], 'treino-do-dia.png', { type: 'image/png' }); } catch (e) { file = null; }
+      if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file], text: texto }).catch(function (err) { if (err && err.name !== 'AbortError') baixar(blob); });
+      } else baixar(blob);
+    }, 'image/png');
+  }
+
+  /* ---------------------------------------------------------- ações */
+  function iniciarDiario() { var t = planoDoDia(S.level); iniciarSessao('daily', t.items, t.ans); }
+  function iniciarExtra() {
+    var t = planoDoDia(S.level); t.extra++; salvar();
+    var its = E.plan(S.level, E.mix(DIA, t.extra, 77), [], 5);
+    iniciarSessao('extra', its, []);
+  }
+  function iniciarErros() {
+    var its = S.errs.slice(0, 5).map(function (e) { return { topic: e.t, seed: e.s, review: true }; });
+    if (!its.length) return; iniciarSessao('erros', its, []);
+  }
+  $('btnIniciar').addEventListener('click', iniciarDiario);
+  $('btnVer').addEventListener('click', function () {
+    var t = planoDoDia(S.level); sess = { kind: 'daily', items: t.items, i: 0, ans: t.ans.slice(), qs: t.items.map(function (it) { return E.build(it.topic, it.seed); }) }; terminar();
+  });
+  $('btnMais').addEventListener('click', iniciarExtra);
+  $('btnErros').addEventListener('click', iniciarErros);
+  $('btnProx').addEventListener('click', proxima);
+  $('btnSair').addEventListener('click', function () { sess = null; desenharHome(); mostrar('home'); });
+  $('btnRMais').addEventListener('click', iniciarExtra);
+  $('btnRHome').addEventListener('click', function () { sess = null; desenharHome(); mostrar('home'); });
+  $('btnShare').addEventListener('click', compartilhar);
+  document.addEventListener('keydown', function (e) {
+    if (tela !== 'quiz' || !sess || e.ctrlKey || e.metaKey || e.altKey) return;
+    var a = sess.ans[sess.i], resp = a !== undefined && a !== null, k = '1234'.indexOf(e.key);
+    if (k < 0) k = 'abcd'.indexOf(e.key.toLowerCase());
+    if (!resp && k >= 0 && k < 4) { e.preventDefault(); responder(k); }
+    else if (resp && e.key === 'Enter' && document.activeElement !== $('btnProx')) { e.preventDefault(); proxima(); }
+  });
+
+  /* ---------------------------------------------------------- início */
+  (function () {
+    var q = /[?&]serie=(6|7|8|9|em)\b/.exec(location.search);
+    if (q) { S.level = q[1]; salvar(); }
+    desenharSeries(); desenharHome(); mostrar('home');
+  })();
+})();
+</script>
+</body>
+</html>
